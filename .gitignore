@@ -1,0 +1,21 @@
+# Byte-compiled / caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pipenv
+Pipfile.lock
+
+# Virtualenvs
+.venv/
+venv/
+ENV/
+
+# VS Code
+.vscode/
+
+# Data output
+
+
+# Logs
+*.log
