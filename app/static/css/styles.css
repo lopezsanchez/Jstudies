@@ -1,0 +1,191 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente y fondo general */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+
+/* Encabezado */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.2rem;
+}
+
+.header h2 {
+    font-size: 1.2rem;
+    color: #666
+}
+
+/* Pestañas */
+/* Contenedor de pestañas */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+}
+
+/* Estilo base de las pestañas */
+.tab {
+    padding: 0.6rem 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 12px 12px 0 0;
+    border: 2px solid #0d6efd;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+/* Pestaña no activa */
+.tab {
+    background-color: #e3efff;
+    color: #0d6efd;
+}
+ 
+/* Pestaña activa */
+.tab.active {
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.tab:not(.active):hover {
+    background-color: #cfe2ff;
+}
+
+.tab-content {
+    border: 2px solid #0d6efd;
+    border-radius: 0 12px 12px 12px;
+    padding: 1.5rem;
+    background-color: #ffffff;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.mensaje{
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.tabla{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.tabla th,
+.tabla td {
+    border: 1px solid #ddd;
+    padding: 0.6rem;
+    text-align: left;
+}
+
+.tabla th {
+    background-color: #f0f0f0;
+}
+
+.tabla tr:nth-child(even){
+    background-color: #fafafa;
+}
+
+/* Títulos 
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Texto 
+p {
+    margin-bottom: 1rem;
+}
+
+/* Enlaces 
+a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+button,
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #0b5ed7;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #0b5ed7;
+}
+
+/* Formularios */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #0d6efd;
+}
+
+
+/* Footer simple 
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+*/

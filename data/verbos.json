@@ -1,0 +1,56 @@
+[
+  {
+    "infinitivo": "do",
+    "pasado": "did",
+    "participio": "done",
+    "traduccion": "hacer"
+  },
+  {
+    "infinitivo": "cost",
+    "pasado": "cost",
+    "participio": "cost",
+    "traduccion": "costar"
+  },
+  {
+    "infinitivo": "cut",
+    "pasado": "cut",
+    "participio": "cut",
+    "traduccion": "cortar"
+  },
+  {
+    "infinitivo": "hit",
+    "pasado": "hit",
+    "participio": "hit",
+    "traduccion": "golpear, pegar"
+  },
+  {
+    "infinitivo": "hurt",
+    "pasado": "hurt",
+    "participio": "hurt",
+    "traduccion": "herir"
+  },
+  {
+    "infinitivo": "put",
+    "pasado": "put",
+    "participio": "put",
+    "traduccion": "poner"
+  },
+  {
+    "infinitivo": "let",
+    "pasado": "let",
+    "participio": "let",
+    "traduccion": "dejar, permitir"
+  },
+  {
+    "infinitivo": "build",
+    "pasado": "built",
+    "participio": "built",
+    "traduccion": "construir"
+  },
+  {
+    "infinitivo": "be",
+    "pasado": "was, were",
+    "participio": "been",
+    "traduccion": "ser, estar"
+  }
+]
