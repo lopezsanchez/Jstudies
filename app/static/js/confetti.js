@@ -2,31 +2,46 @@
 // Créditos: OneReplay Team, Oct 21, 2025 
 // https://blog.openreplay.com/es/agregar-efectos-confeti-javascript/
 
-const canvas = document.getElementById('confetti-canvas')
-const contexto = canvas.getContext('2d')
-const particulas = []
+let canvas, contexto;
+let particulas = [];
+let confettiActivo = false;
 
-// Adaptar el tamaño del canvas a la ventana
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+// Encapsulamos la inicialización 
+function initConfetti() {
+    canvas = document.getElementById('confetti-canvas');
+    if (!canvas) {
+        console.warn("Canvas de confetti no encontrado");
+        return false;
+    }
 
+    contexto = canvas.getContext('2d');
 
+    // Adaptar el tamaño del canvas a la ventana
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    return true;
+}
 
 // Crear partículas de propiedades aleatorias
-function crearParticula() {
+function crearParticula(inicial = false) {
     return {
         x: Math.random() * canvas.width,
         y: -10,
         vx: (Math.random() - 0.5) * 2,
         vy: Math.random() * 3 + 2,
         color: `hsl(${Math.random() * 360}, 70%, 50%)`,
-        size: Math.random() * 3 + 2
+        size: Math.random() * 6 + 6
     }
 }
 
 // Bucle de animación
 function animar() {
     contexto.clearRect(0, 0, canvas.width, canvas.height)
+
+    // Lluvia continua de partículas
+    if (confettiActivo && particulas.length < 300 ) { 
+        particulas.push(crearParticula());
+    }
 
     particulas.forEach((p, index) => {
         p.x += p.vx
@@ -43,7 +58,7 @@ function animar() {
     })
 
             
-    if (particulas.length > 0 ){
+    if (confettiActivo || particulas.length > 0 ){
         requestAnimationFrame(animar)
     }
 }
@@ -59,21 +74,26 @@ function recogerConfetti() {
 
 // Lanzamiento de confetti
 function lanzarConfetti() {
+    if(!canvas) {
+        const ok = initConfetti();
+        if (!ok) return;
+    }
 
     // Capturar las preferencias de usuario relativas al movimiento
-    const preferenciasReduccionMovimiento = window.matchMedia('(prefers-reduce-motion: reduce)').matches
-
-    if(!preferenciasReduccionMovimiento){    
-
-        for (let i = 0; i < 100; i++){
-            particulas.push(crearParticula())
-        }
-
-        animar()
-        recogerConfetti()
-    } else {
+    const preferenciasReduccionMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if(preferenciasReduccionMovimiento) {
         // Si las preferencias de usuario limitan el movimiento,
         // no se activa el confetti
         showSuccessMessage('¡Enhorabuena! ¡Has completado el examen!')
+        return;
     }
+
+    confettiActivo = true;
+    
+    for (let i = 0; i < 150; i++){
+        particulas.push(crearParticula(true));
+    }
+
+    animar()
+    recogerConfetti()
 }

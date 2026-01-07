@@ -263,6 +263,16 @@ select:focus {
     
 }
 
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* no bloquea los clicks */
+    z-index: 9999;         /* superpuesto a todo lo demás */
+}
+
 /* Footer simple 
 footer {
     margin-top: 2rem;
