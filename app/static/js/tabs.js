@@ -10,6 +10,7 @@ function corregir() {
     const respuestas = document.querySelectorAll(".respuesta");
     let aciertos = 0;
 
+    // Recorremos todas las respuestas para corregirlas
     respuestas.forEach(input => {
         const correcto = input.dataset.correcto.trim();
         const valor = input.value.trim();
@@ -17,7 +18,7 @@ function corregir() {
         const fila = input.closest("tr");
         const celdaResultado = fila.querySelector(".resultado");
 
-        // no se rompe el examen aunque no exista celdaResultado
+        // No se rompe el examen aunque no exista celdaResultado
         if (!celdaResultado){
             console.error("Falta la celda .resultado en la fila: ", fila);
             return;
@@ -25,6 +26,8 @@ function corregir() {
 
         input.disabled = true;
 
+        // Se definen los iconos que van a mostrarse para cada
+        // respuesta correcta o incorrecta
         if (valor.toLowerCase() === correcto.toLowerCase() ){
             aciertos++;
             input.value = correcto;
@@ -36,16 +39,24 @@ function corregir() {
             celdaResultado.innerHTML = "❌😬💥";
         }
 
-        // animación
+        // Animación de los emojis
         celdaResultado.classList.remove("pop");
         void celdaResultado.offsetWidth;
         celdaResultado.classList.add("pop");
     });
 
+    // Se muestra la puntuación obtenida tras calcular la media
     const total = respuestas.length;
     const nota = Math.round((aciertos / total ) * 100);
 
     const box = document.getElementById("puntuacion");
     box.style.display = "block";
     box.innerHTML = `Has obtenido una puntuación de <strong>${nota}%</strong>`;
+    
+    // Lanzamos confetti tras terminar el examen
+    requestAnimationFrame(() => {
+        setTimeout(() => {
+            lanzarConfetti();
+        }, 100);
+    });
 }
