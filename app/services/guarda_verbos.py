@@ -1,7 +1,9 @@
 import json
+import random
 from pathlib import Path
 
 DATA_FILE = Path("data/verbos.json")
+CAMPOS = ["infinitivo", "pasado", "participio", "traduccion"]
 
 def cargar_verbos():
     if not DATA_FILE.exists():
@@ -26,3 +28,34 @@ def añadir_verbo(nuevo):
 
 def obtener_todos():
     return cargar_verbos()
+
+def buscar_por_campo(valor, campo):
+    verbos = cargar_verbos()
+    valor = valor.lower().strip()
+
+    for v in verbos:
+        if v[campo].lower() == valor:
+            return v
+        
+    return None
+
+def contar_verbos():
+    return len(cargar_verbos())
+
+def obtener_todos_ordenados():
+    verbos = cargar_verbos()
+    return sorted(verbos, key=lambda v: v["infinitivo"].lower())
+
+def generar_examen(n):
+    verbos = cargar_verbos()
+    seleccion = random.sample(verbos, min(n, len(verbos)))
+
+    examen = []
+    for v in seleccion:
+        campo_vacio = random.choice(CAMPOS)
+        examen.append({
+            "verbo": v,
+            "campo_vacio": campo_vacio
+        })
+
+    return examen

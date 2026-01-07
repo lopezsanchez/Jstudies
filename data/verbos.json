@@ -52,5 +52,389 @@
     "pasado": "was, were",
     "participio": "been",
     "traduccion": "ser, estar"
+  },
+  {
+    "infinitivo": "dream",
+    "pasado": "dreamt",
+    "participio": "dreamt",
+    "traduccion": "soñar"
+  },
+  {
+    "infinitivo": "drink",
+    "pasado": "drank",
+    "participio": "drunk",
+    "traduccion": "beber"
+  },
+  {
+    "infinitivo": "burn",
+    "pasado": "burnt",
+    "participio": "burnt",
+    "traduccion": "quemar, arder"
+  },
+  {
+    "infinitivo": "lend",
+    "pasado": "lent",
+    "participio": "lent",
+    "traduccion": "prestar"
+  },
+  {
+    "infinitivo": "send",
+    "pasado": "sent",
+    "participio": "sent",
+    "traduccion": "enviar"
+  },
+  {
+    "infinitivo": "spend",
+    "pasado": "spent",
+    "participio": "spent",
+    "traduccion": "gastar, pasar"
+  },
+  {
+    "infinitivo": "keep",
+    "pasado": "kept",
+    "participio": "kept",
+    "traduccion": "guardar"
+  },
+  {
+    "infinitivo": "leave",
+    "pasado": "left",
+    "participio": "left",
+    "traduccion": "dejar, irse"
+  },
+  {
+    "infinitivo": "meet",
+    "pasado": "met",
+    "participio": "met",
+    "traduccion": "encontrarse, conocer a alguien"
+  },
+  {
+    "infinitivo": "bleed",
+    "pasado": "bled",
+    "participio": "bled",
+    "traduccion": "sangrar"
+  },
+  {
+    "infinitivo": "feed",
+    "pasado": "fed",
+    "participio": "fed",
+    "traduccion": "alimentar"
+  },
+  {
+    "infinitivo": "hold",
+    "pasado": "held",
+    "participio": "held",
+    "traduccion": "colgar, sujetar"
+  },
+  {
+    "infinitivo": "mean",
+    "pasado": "meant",
+    "participio": "meant",
+    "traduccion": "significar"
+  },
+  {
+    "infinitivo": "sleep",
+    "pasado": "slept",
+    "participio": "slept",
+    "traduccion": "dormir"
+  },
+  {
+    "infinitivo": "feel",
+    "pasado": "felt",
+    "participio": "felt",
+    "traduccion": "sentir"
+  },
+  {
+    "infinitivo": "lose",
+    "pasado": "lost",
+    "participio": "lost",
+    "traduccion": "perder"
+  },
+  {
+    "infinitivo": "get",
+    "pasado": "got",
+    "participio": "got",
+    "traduccion": "conseguir"
+  },
+  {
+    "infinitivo": "sit",
+    "pasado": "sat",
+    "participio": "sat",
+    "traduccion": "sentarse"
+  },
+  {
+    "infinitivo": "have",
+    "pasado": "had",
+    "participio": "had",
+    "traduccion": "tener"
+  },
+  {
+    "infinitivo": "bring",
+    "pasado": "brought",
+    "participio": "brought",
+    "traduccion": "comprar"
+  },
+  {
+    "infinitivo": "buy",
+    "pasado": "bought",
+    "participio": "bought",
+    "traduccion": "comprar"
+  },
+  {
+    "infinitivo": "fight",
+    "pasado": "fought",
+    "participio": "fought",
+    "traduccion": "luchar, pelear"
+  },
+  {
+    "infinitivo": "think",
+    "pasado": "thought",
+    "participio": "thought",
+    "traduccion": "pensar, creer"
+  },
+  {
+    "infinitivo": "catch",
+    "pasado": "caught",
+    "participio": "caught",
+    "traduccion": "coger"
+  },
+  {
+    "infinitivo": "teach",
+    "pasado": "taught",
+    "participio": "taught",
+    "traduccion": "enseñar"
+  },
+  {
+    "infinitivo": "make",
+    "pasado": "made",
+    "participio": "made",
+    "traduccion": "hacer"
+  },
+  {
+    "infinitivo": "understand",
+    "pasado": "understood",
+    "participio": "understood",
+    "traduccion": "entender"
+  },
+  {
+    "infinitivo": "find",
+    "pasado": "found",
+    "participio": "found",
+    "traduccion": "encontrar"
+  },
+  {
+    "infinitivo": "hear",
+    "pasado": "heard",
+    "participio": "heard",
+    "traduccion": "oír"
+  },
+  {
+    "infinitivo": "sell",
+    "pasado": "sold",
+    "participio": "sold",
+    "traduccion": "vender"
+  },
+  {
+    "infinitivo": "tell",
+    "pasado": "told",
+    "participio": "told",
+    "traduccion": "decir, contar"
+  },
+  {
+    "infinitivo": "win",
+    "pasado": "won",
+    "participio": "won",
+    "traduccion": "ganar"
+  },
+  {
+    "infinitivo": "pay",
+    "pasado": "paid",
+    "participio": "paid",
+    "traduccion": "pagar"
+  },
+  {
+    "infinitivo": "read",
+    "pasado": "read",
+    "participio": "read",
+    "traduccion": "leer"
+  },
+  {
+    "infinitivo": "say",
+    "pasado": "said",
+    "participio": "said",
+    "traduccion": "decir"
+  },
+  {
+    "infinitivo": "break",
+    "pasado": "broke",
+    "participio": "broken",
+    "traduccion": "romper"
+  },
+  {
+    "infinitivo": "choose",
+    "pasado": "chose",
+    "participio": "chosen",
+    "traduccion": "escoger, elegir"
+  },
+  {
+    "infinitivo": "speak",
+    "pasado": "spoke",
+    "participio": "spoken",
+    "traduccion": "hablar"
+  },
+  {
+    "infinitivo": "drive",
+    "pasado": "drove",
+    "participio": "driven",
+    "traduccion": "conducir"
+  },
+  {
+    "infinitivo": "ride",
+    "pasado": "rode",
+    "participio": "ridden",
+    "traduccion": "montar"
+  },
+  {
+    "infinitivo": "write",
+    "pasado": "wrote",
+    "participio": "written",
+    "traduccion": "escribir"
+  },
+  {
+    "infinitivo": "bite",
+    "pasado": "bit",
+    "participio": "bitten",
+    "traduccion": "morder, picar"
+  },
+  {
+    "infinitivo": "hide",
+    "pasado": "hid",
+    "participio": "hidden",
+    "traduccion": "esconder(se)"
+  },
+  {
+    "infinitivo": "eat",
+    "pasado": "ate",
+    "participio": "eaten",
+    "traduccion": "comer"
+  },
+  {
+    "infinitivo": "fall",
+    "pasado": "fell",
+    "participio": "fallen",
+    "traduccion": "caer"
+  },
+  {
+    "infinitivo": "forget",
+    "pasado": "forgot",
+    "participio": "forgotten",
+    "traduccion": "olvidar"
+  },
+  {
+    "infinitivo": "give",
+    "pasado": "gave",
+    "participio": "given",
+    "traduccion": "dar"
+  },
+  {
+    "infinitivo": "see",
+    "pasado": "saw",
+    "participio": "seen",
+    "traduccion": "ver"
+  },
+  {
+    "infinitivo": "take",
+    "pasado": "took",
+    "participio": "taken",
+    "traduccion": "coger, tomar"
+  },
+  {
+    "infinitivo": "fly",
+    "pasado": "flew",
+    "participio": "flown",
+    "traduccion": "volar"
+  },
+  {
+    "infinitivo": "grow",
+    "pasado": "grew",
+    "participio": "grown",
+    "traduccion": "crecer, cultivar"
+  },
+  {
+    "infinitivo": "know",
+    "pasado": "knew",
+    "participio": "known",
+    "traduccion": "saber, conocer"
+  },
+  {
+    "infinitivo": "throw",
+    "pasado": "threw",
+    "participio": "thrown",
+    "traduccion": "tirar"
+  },
+  {
+    "infinitivo": "draw",
+    "pasado": "drew",
+    "participio": "drawn",
+    "traduccion": "dibujar"
+  },
+  {
+    "infinitivo": "show",
+    "pasado": "showed",
+    "participio": "shown",
+    "traduccion": "mostrar, enseñar"
+  },
+  {
+    "infinitivo": "wear",
+    "pasado": "wore",
+    "participio": "worn",
+    "traduccion": "llevar puesto"
+  },
+  {
+    "infinitivo": "begin",
+    "pasado": "began",
+    "participio": "begun",
+    "traduccion": "empezar"
+  },
+  {
+    "infinitivo": "ring",
+    "pasado": "rang",
+    "participio": "rung",
+    "traduccion": "sonar, tocar"
+  },
+  {
+    "infinitivo": "run",
+    "pasado": "ran",
+    "participio": "run",
+    "traduccion": "correr"
+  },
+  {
+    "infinitivo": "sing",
+    "pasado": "sang",
+    "participio": "sung",
+    "traduccion": "cantar"
+  },
+  {
+    "infinitivo": "swim",
+    "pasado": "swam",
+    "participio": "swum",
+    "traduccion": "nadar"
+  },
+  {
+    "infinitivo": "go",
+    "pasado": "went",
+    "participio": "gone",
+    "traduccion": "ir"
+  },
+  {
+    "infinitivo": "become",
+    "pasado": "became",
+    "participio": "become",
+    "traduccion": "llegar a ser, hacerse"
+  },
+  {
+    "infinitivo": "come",
+    "pasado": "came",
+    "participio": "come",
+    "traduccion": "venir"
   }
 ]

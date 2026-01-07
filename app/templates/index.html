@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Juliverbos</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/tabs.js') }}"></script>
 </head>
 <body>
 
@@ -14,21 +15,136 @@
 
 <div class="container">
     <div class="tabs">
-        <a href="/" class="tab {% 
+        <a href="/" class="tab {%
+            if pestaña_activa == 'consultar' %}active{%
+            endif %}">
+                Consultar
+        </a>
+
+        <a href="/examinarse" class="tab {%
+            if pestaña_activa == 'examinarse' %}active{%
+            endif %}">
+                Examinarse
+        </a>
+        
+        <a href="/añadir" class="tab {% 
             if pestaña_activa == 'añadir' %}active{%
             endif %}">
                 Añadir
         </a>
+
         <a href="/todos" class="tab {%
             if pestaña_activa == 'todos' %}active{%
             endif %}">
-            Obtener todos
+                Obtener todos
         </a>
-        <!--
-        <button class="tab active">Añadir nuevo</button>
-        <button class="tab">Obtener todos</button>
-    -->
     </div>
+
+    <!-- PESTAÑA CONSULTAR -->
+     {% if pestaña_activa == "consultar" %}
+     <div class=""tab-content active">
+        <form method="POST">
+            <input name="texto" placeholder="Introduce el verbo que quieres consultar" required>
+
+            <select name="campo" required>
+                <option value="infinitivo">Infinitivo</option>
+                <option value="pasado">Pasado</option>
+                <option value="participio">Participio</option>
+                <option value="Significado">Significado</option>
+            </select>
+
+            <button type="submit">Consultar</button>
+        </form>
+
+        {% if resultado %}
+        <table class="tabla">
+            <tr><th>Infinitivo</th><td>{{ resultado.infinitivo}}</td></tr>
+            <tr><th>Pasado</th><td>{{ resultado.pasado }}</td></tr>
+            <tr><th>Participio</th><td>{{ resultado.participio }}</td></tr>
+            <tr><th>Traducción</th><td>{{ resultado.traduccion }}</td></tr>
+        </table>
+
+        {% elif error %}
+        <p class="mensaje error">{{ error }}</p>
+
+        {% endif %}
+
+    </div>
+    {% endif %}
+
+    <!-- PESTAÑA EXAMINARSE -->
+     {% if pestaña_activa == "examinarse" %}
+     <div class="tab-content active">
+
+        <form method="POST" class="examen-config">
+            <div class="config-linea">
+                <span>Hazme un examen de </span>
+                <select name="cantidad" class="select-cantidad">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
+                <span>verbos</span>
+
+                <button type="submit" class="btn-empezar">Empezar</button>
+            </div>
+        </form>
+
+        {% if examen %}
+        <div class="examen fade-in">
+        <form id="examen-form">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Infinitivo</th>
+                        <th>Pasado</th>
+                        <th>Participio</th>
+                        <th>Significado</th>
+                        <th>✔ / ❌</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in examen %}
+                    <tr>
+                        {% for campo in ["infinitivo", "pasado", 
+                            "participio", "traduccion"] %}
+                        <td>
+                            {% if campo == item.campo_vacio %}
+                                <input
+                                    data-correcto="{{ item.verbo[campo] }}"
+                                    class="respuesta"
+                                >
+                            {% else %}
+                                {{ item.verbo[campo] }}
+                            {% endif %}
+                        </td>
+                        {% endfor %}
+                        <td class="resultado"></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="acciones-examen">
+                <button type="button" onclick="corregir()">Corregir</button>
+            </div>
+        </form>
+
+        <div id="puntuacion" class="puntuacion" style="display:none;"></div>
+
+        <form method="GET">
+            <button>Realizar otro examen</button>
+        </form>
+
+        </div>
+
+        {% endif %}
+        
+    </div>
+    {% endif %}
 
     <!-- PESTAÑA AÑADIR -->
     {% if pestaña_activa == "añadir" %}
@@ -53,8 +169,14 @@
 
     <!-- PESTAÑA OBTENER TODOS -->
     {% if pestaña_activa =="todos" %}
-    <div class=""tab-content active>
+    <div class="tab-content active">
         <p>🔎🔎 Mostrar el listado completo de verbos 🔎🔎</p>
+        <br />
+
+        <div class="acciones">
+            <a href="/todos?orden=az" class="btn">A → Z</a>
+            <button onclick="mostrarConteo({{ total }})">Contar</button>
+        </div>
 
         {% if verbos %}
             <table class="tabla">
@@ -82,36 +204,6 @@
         {% endif %}
     </div>
     {% endif %}
-
-    <!-- 
-    <div class="container">
-        <h1>Buscar verbo irregular</h1>
-
-        <form method="POST">
-            <input
-                type="text"
-                name="infinitivo"
-                placeholder="Infinitivo en inglés"
-                required
-            >
-            <button type="submit">Buscar</button>
-        </form>
-
-        {% if resultado %}
-            <div class="resultado">
-                <ul>
-                    <li><strong>Infinitivo:</strong> {{ resultado.infinitivo }}</li>
-                    <li><strong>Pasado:</strong> {{ resultado.pasado }}</li>
-                    <li><strong>Participio:</strong> {{ resultado.participio }}</li>
-                    <li><strong>Traducción:</strong> {{ resultado.traduccion }}</li>
-                </ul> 
-            </div>
-        {% elif resultado is not none %}
-            <h3>¡Lo sentimos</h3>
-            <p>No hemos encontrado ese verbo</p>
-        {% endif %}
-    </div>
--->
 
 </div>
 
